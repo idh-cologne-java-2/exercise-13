@@ -5,6 +5,8 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import idh.java.ATM.IllegalInputException;
+
 public class TestATM {
 	
 	ATM atm;
@@ -15,7 +17,7 @@ public class TestATM {
 	}
 	
 	@Test
-	void testConvertToBillsCorrectBehaviour() {
+	void testConvertToBillsCorrectBehaviour() throws IllegalInputException {
 		assertEquals(new int[] {0,0,0,0,1,1,1}, atm.convertToBills(35));
 	}
 }
