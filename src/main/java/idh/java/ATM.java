@@ -77,7 +77,9 @@ public class ATM  {
 	 * @return
 	 * @throws IllegalInputException 
 	 */
-	protected int[] convertToBills(int amount) throws IllegalInputException {
+	
+	//wegen github struktur verändert. 
+	public int[] convertToBills(int amount) throws IllegalInputException {
 		if (amount < 0)
 			return new int[] {0,0,0,0,0,0,0};
 		int[] r = new int[7];
@@ -100,7 +102,8 @@ public class ATM  {
 		atm.run();
 	};
 	
-	class IllegalInputException extends Exception {
+	//public gemacht das für test zugreifbar
+	public class IllegalInputException extends Exception {
 
 		private static final long serialVersionUID = 1L;
 		
