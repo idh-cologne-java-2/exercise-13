@@ -1,6 +1,6 @@
 package idh.java;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -18,6 +18,6 @@ public class TestATM {
 	
 	@Test
 	void testConvertToBillsCorrectBehaviour() throws IllegalInputException {
-		assertEquals(new int[] {0,0,0,0,1,1,1}, atm.convertToBills(35));
+		assertArrayEquals(new int[] {0,0,0,0,1,1,1}, atm.convertToBills(35));
 	}
 }
