@@ -47,7 +47,13 @@ public class ATM  {
 		
 		
 		// withdraw
-		int[] bills = convertToBills(amount);
+		int[] bills = new int[] {0, 0, 0, 0, 0, 0, 0};
+		try {
+			bills = convertToBills(amount);
+		} catch (IllegalInputException e) {
+			// this should not happen, since we're verifying it before
+			e.printStackTrace();
+		}
 		
 		// generate the printout string
 		StringBuilder b = new StringBuilder();
@@ -69,12 +75,16 @@ public class ATM  {
 	 * (this is not popular in reality ...)
 	 * @param amount
 	 * @return
+	 * @throws IllegalInputException 
 	 */
-	private int[] convertToBills(int amount) {
+	private int[] convertToBills(int amount) throws IllegalInputException {
 		int[] r = new int[7];
 		for (int i = 0;  i < value_of_bills.length; i++) {
 			r[i] = amount / value_of_bills[i];
 			amount = amount % value_of_bills[i];		
+		}
+		if (amount > 0) {
+			throw new IllegalInputException();
 		}
 		return r;
 	}
@@ -88,5 +98,10 @@ public class ATM  {
 		atm.run();
 	};
 	
+	class IllegalInputException extends Exception {
+
+		private static final long serialVersionUID = 1L;
+		
+	}
 	
 }
