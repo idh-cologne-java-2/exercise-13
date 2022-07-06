@@ -78,6 +78,8 @@ public class ATM  {
 	 * @throws IllegalInputException 
 	 */
 	protected int[] convertToBills(int amount) throws IllegalInputException {
+		if (amount < 0)
+			return new int[] {0,0,0,0,0,0,0};
 		int[] r = new int[7];
 		for (int i = 0;  i < value_of_bills.length; i++) {
 			r[i] = amount / value_of_bills[i];
