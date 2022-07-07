@@ -4,7 +4,7 @@ package idh.java;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 
-public class ATM  {
+public class ATM {
 	
 	// initial cash in the ATM
 	int cash = 100;
@@ -85,7 +85,7 @@ public class ATM  {
 			r[i] = amount / value_of_bills[i];
 			amount = amount % value_of_bills[i];		
 		}
-		if (amount > 0) {
+		if (amount % 5 > 0) {
 			throw new IllegalInputException();
 		}
 		return r;
@@ -100,7 +100,7 @@ public class ATM  {
 		atm.run();
 	};
 	
-	class IllegalInputException extends Exception {
+	public class IllegalInputException extends Exception {
 
 		private static final long serialVersionUID = 1L;
 		
