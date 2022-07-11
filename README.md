@@ -1,6 +1,5 @@
 Softwaretechnologie: Java 2
 
-Hey ich habe aus versehen den eigentlichen Code von Herrn Reiter überschrieben, weil ich keinen neuen Branch anegelegt habe. Sorry, habe ihm auch schon eine Mail geschrieben. Man kann sich seinen Code auch runterladen unter "6 commits", kann man den sehen. Sorry lol :)
 # Übung 13
 
 
