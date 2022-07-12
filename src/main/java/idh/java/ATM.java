@@ -1,8 +1,13 @@
 package idh.java;
 
 
+import static org.junit.Assert.assertArrayEquals;
+import static org.junit.Assert.assertThrows;
+
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+
+import org.junit.jupiter.api.Test;
 
 public class ATM  {
 	
@@ -90,6 +95,30 @@ public class ATM  {
 		}
 		return r;
 	}
+	
+	   @Test
+	   void test1() throws IllegalInputException {
+		 assertArrayEquals(new int[] {0,2,0,0,0,0,0}, 
+				 new ATM().convertToBills(400)); 
+		 assertArrayEquals(new int[] {0,1,0,1,0,0,0},
+				 new ATM().convertToBills(250));
+		 assertArrayEquals(new int[] {0,0,0,0,0,1,0},
+				 new ATM().convertToBills(10));
+		 }
+	   
+	   @Test
+	   void test2() throws IllegalInputException {
+		   int[] out = new int[] {0,0,0,0,0,0,0};
+		   assertArrayEquals(out, new ATM().convertToBills(-5));
+	   }
+	   
+	   @Test
+	   void test3() {
+		   assertThrows(IllegalInputException.class, 
+				   () -> {new ATM().convertToBills(62);});
+	   }
+	
+	
 	
 	
 	/**
